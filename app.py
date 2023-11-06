@@ -31,17 +31,17 @@ def load_data():
     return data
 
 # Use a button to trigger the data loading
-if st.button('Load Data'):
-    data = load_data()
+# if st.button('Load Data'):
+data = load_data()
 
-    # Create an Altair chart using the loaded data
-    chart = alt.Chart(data).mark_bar().encode(
-        x='a',
-        y='b'
-    )
+# Create an Altair chart using the loaded data
+chart = alt.Chart(data).mark_bar().encode(
+    x='a',
+    y='b'
+)
 
-    # Display the chart
-    st.altair_chart(chart, use_container_width=True)
-else:
-    st.write('Click the button to load data!')
+# Display the chart
+st.altair_chart(chart, use_container_width=True)
+# else:
+#     st.write('Click the button to load data!')
 
