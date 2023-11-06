@@ -98,7 +98,7 @@ def load_data():
     col_list = ['culprit_pred', 'missile_pred','intent_pred','evidence_extractive_pred','evidence_abstractive_pred','framing_pred','goal_extractive_pred',
                 'goal_abstractive_pred','quotes_extractive_pred','quotes_authors_pred','implicit_message_pred']
     for col in col_list:
-        data['culprit_pred'] = data['culprit_pred'].apply(string_to_list)
+        data[col] = data[col].apply(string_to_list)
     return data
 
 # Use a button to trigger the data loading
