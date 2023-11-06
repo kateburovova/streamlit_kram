@@ -1,8 +1,9 @@
-import streamlit as st
-import altair as alt
-import pandas as pd
 import random
 import ast
+import streamlit as st
+import streamlit.components.v1 as components
+import altair as alt
+import pandas as pd
 
 def string_to_list(s):
     try:
@@ -117,7 +118,17 @@ st.write(f"Type of data: {data['evidence_abstractive_pred'].iloc[200]}")
 
 st.title('My Streamlit App with an Altair Chart')
 
-plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
+
+
+
+
+# Display the HTML file in Streamlit
+HtmlFile = open('chart.html', 'r', encoding='utf-8')
+source_code = HtmlFile.read()
+print(source_code)
+components.html(source_code, height=600)
+
+# plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
 # else:
 #     st.write('Click the button to load data!')
 
