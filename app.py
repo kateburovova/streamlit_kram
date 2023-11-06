@@ -111,8 +111,8 @@ data = load_data()
 #     y='b'
 # )
 
-st.write(f"Type of data: {type(data['culprit_pred'].iloc[0])}")
-st.write(f"Type of data: {data['culprit_pred'].iloc[0]}")
+st.write(f"Type of data: {type(data['evidence_abstractive_pred'].iloc[200])}")
+st.write(f"Type of data: {data['evidence_abstractive_pred'].iloc[200]}")
 
 
 st.title('My Streamlit App with an Altair Chart')
