@@ -117,7 +117,7 @@ st.write(f"Type of data: {data['evidence_abstractive_pred'].iloc[200]}")
 
 st.title('My Streamlit App with an Altair Chart')
 
-# plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
+plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
 # else:
 #     st.write('Click the button to load data!')
 
