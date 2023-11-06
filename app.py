@@ -46,7 +46,7 @@ def plot_distribution_by_date_top_percent(df, colname, top_percentage=10, col_fo
     color_scale = alt.Scale(domain=evidence_types, range=custom_colors)
 
     date_dropdown = alt.binding_select(options=long_df['date_only'].unique().tolist(), name='Select Date ')
-    date_selection = alt.selection_single(fields=['date_only'], bind=date_dropdown, init={'date_only': long_df['date_only'].iloc[0]})
+    date_selection = alt.selection_single(fields=['date_only'], bind=date_dropdown, init=None)
 
     chart = alt.Chart(long_df).mark_bar(size=200).encode(
         x=alt.X('Percentage:Q',
