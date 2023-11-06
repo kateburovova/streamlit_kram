@@ -112,13 +112,12 @@ data = load_data()
 #     y='b'
 # )
 
-st.write(f"Type of data: {type(data['evidence_abstractive_pred'].iloc[200])}")
-st.write(f"Type of data: {data['evidence_abstractive_pred'].iloc[200]}")
+# st.write(f"Type of data: {type(data['evidence_abstractive_pred'].iloc[200])}")
+# st.write(f"Type of data: {data['evidence_abstractive_pred'].iloc[200]}")
+st.set_page_config(layout="wide")
 
 
-st.title('My Streamlit App with an Altair Chart')
-
-
+st.title('Streamlit Kram APP')
 
 
 
@@ -126,7 +125,7 @@ st.title('My Streamlit App with an Altair Chart')
 HtmlFile = open('chart.html', 'r', encoding='utf-8')
 source_code = HtmlFile.read()
 print(source_code)
-components.html(source_code, height=600)
+components.html(source_code, height=800)
 
 # plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
 # else:
