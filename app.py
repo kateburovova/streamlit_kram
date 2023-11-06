@@ -25,7 +25,7 @@ import altair as alt
 import pandas as pd
 
 # Load data from CSV file
-@st.cache  # Add caching so we load the data only once
+# @st.cache  # Add caching so we load the data only once
 def load_data():
     data = pd.read_csv('data.csv')
     return data
@@ -39,8 +39,8 @@ chart = alt.Chart(data).mark_bar().encode(
     x='a',
     y='b'
 )
+st.title('My Streamlit App with an Altair Chart')
 
-# Display the chart
 st.altair_chart(chart, use_container_width=True)
 # else:
 #     st.write('Click the button to load data!')
