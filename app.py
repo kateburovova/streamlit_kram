@@ -2,6 +2,13 @@ import streamlit as st
 import altair as alt
 import pandas as pd
 import random
+import ast
+
+def string_to_list(s):
+    try:
+        return ast.literal_eval(s)
+    except (ValueError, SyntaxError):
+        return s  # returns the original string if it cannot be parsed to a list
 
 
 def generate_random_color():
@@ -88,6 +95,10 @@ def plot_distribution_by_date_top_percent(df, colname, top_percentage=10, col_fo
 # @st.cache  # Add caching so we load the data only once
 def load_data():
     data = pd.read_csv('df_FINAL_narratives.csv')
+    col_list = ['culprit_pred', 'missile_pred','intent_pred','evidence_extractive_pred','evidence_abstractive_pred','framing_pred','goal_extractive_pred',
+                'goal_abstractive_pred','quotes_extractive_pred','quotes_authors_pred','implicit_message_pred']
+    for col in col_list:
+        data['culprit_pred'] = data['culprit_pred'].apply(string_to_list)
     return data
 
 # Use a button to trigger the data loading
@@ -99,9 +110,14 @@ data = load_data()
 #     x='a',
 #     y='b'
 # )
+
+st.write(f"Type of data: {type(data['culprit_pred'].iloc[0])}")
+st.write(f"Type of data: {data['culprit_pred'].iloc[0]}")
+
+
 st.title('My Streamlit App with an Altair Chart')
 
-plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
+# plot_distribution_by_date_top_percent(data, 'culprit_pred_mapped', top_percentage=90)
 # else:
 #     st.write('Click the button to load data!')
 
