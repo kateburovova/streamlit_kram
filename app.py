@@ -15,7 +15,24 @@ import pandas as pd
 st.set_page_config(layout="wide")
 
 st.title('Аналіз медіа наративів навколо обстрілу Краматорського вокзалу')
-st.markdown('В російському сегменті Телеграм')
+
+st.markdown(
+    """
+    <style>
+    .color-block {
+        color: white; 
+        background-color: #0080ff; 
+        padding: 4px; 
+        border-radius: 5px;
+    }
+    </style>
+    <div class="color-block">
+        В російському сегменті Телеграм
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+# st.markdown('В російському сегменті Телеграм')
 
 
 # Display the HTML file in Streamlit
