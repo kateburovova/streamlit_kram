@@ -73,8 +73,7 @@ section3_mapping={
 
 st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 
-show_plot(section1_mapping, selected_option1)
-
+# show_plot(section1_mapping, selected_option1)
 # st.dataframe(df_unique_evidence_level2, height=400)
 
 ########################За типами наративів
@@ -97,11 +96,18 @@ st.write(f'Ви переглядаєте рівень деталізації н�
 section5_mapping={
     'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
     'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html'}
-show_plot(section5_mapping, selected_option4)
+show_plot(section5_mapping, selected_option5)
 # st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
 
 st.markdown('## Найважливіші мотиви присутні в обговореннях події?')
+
+selected_option6 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels6')
+st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option6}')
+section6_mapping={
+    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_framing25_level2.html',
+    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_framing25_level1.html'}
+show_plot(section6_mapping, selected_option6)
 
 st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
 
