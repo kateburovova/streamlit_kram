@@ -31,11 +31,11 @@ st.markdown('## Які новинні наративи поширювались 
 options_general_narratives = ['Винуватець', 'Докази', 'Мета', "Фреймінг"]
 selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option}')
-section1_mapping:{'Винуватець':'section1_plots/culprit_plot_area_general.html',
+section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_general.html',
                   'Докази': 'section1_plots/evidence_plot_area_general.html',
                   'Мета': 'section1_plots/goal_plot_area_general.html',
                   'Фреймінг': 'section1_plots/framing_plot_area_general.html'}
-show_plot(options_general_narratives, selected_option)
+show_plot(section1_mapping, selected_option)
 
 st.markdown('### Які новинні наративи поширювались протягом перших 24 годин?')
 selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
