@@ -54,8 +54,6 @@ st.markdown(f"""
 ########################Загальні деталі поширення
 st.markdown('## Які новинні наративи поширювались загалом?')
 
-'В першу добу після обстрілу російські Телеграм канали здебільшого мотивували провину України тим, що аналогічну зброю ЗСУ активно використовували при обстрілах так званих ДНР та ЛНР.'
-
 options_general_narratives = ['Докази', 'Винуватець', 'Мета', "Фреймінг"]
 selected_option1 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='general_narrative')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option1}')
@@ -64,6 +62,9 @@ section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_gener
                   'Мета': 'section1_plots/goal_plot_area_general.html',
                   'Фреймінг': 'section1_plots/framing_plot_area_general.html'}
 show_plot(section1_mapping, selected_option1)
+
+'В першу добу після обстрілу російські Телеграм канали здебільшого мотивували провину України тим, що аналогічну зброю ЗСУ активно використовували при обстрілах так званих ДНР та ЛНР.'
+
 
 ############Перші 24 години
 
@@ -148,7 +149,7 @@ options_8_1 = ['Впливовість за переглядами', 'Вплив
 selected_option8_1 = st.selectbox('Оберіть, будь ласка, визначення впливовості:', options_8_1, key='levels81')
 options_8_2 = ['Узагальнено', 'Деталізовано']
 selected_option8_2 = st.selectbox('Оберіть, будь ласка, рівень узагальнення:', options_8_2, key='levels82')
-st.write(f'Ви переглядаєте наратив: {selected_option8}, {selected_option8_1},')
+st.write(f'Ви переглядаєте наратив: {selected_option8}, {selected_option8_1}, {selected_option8_2}')
 
 combo = f'{selected_option8} + {selected_option8_1} + {selected_option8_2}'
 
