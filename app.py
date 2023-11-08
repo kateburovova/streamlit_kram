@@ -8,7 +8,7 @@ import numpy as np
 
 @st.cache  # Add caching so we load the data only once
 def load_data(path):
-    data = pd.read_csv(path)
+    data = pd.read_csv(path, index_col=[0])
     return data
 
 # data = load_data()
