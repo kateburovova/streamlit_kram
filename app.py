@@ -12,6 +12,14 @@ import pandas as pd
 
 # data = load_data()
 
+def show_plot(dictionary=None, key=None, plotname=None, height=800):
+    if key:
+        plotname = dictionary[key]
+        HtmlFile = open(plotname, 'r', encoding='utf-8')
+        source_code = HtmlFile.read()
+        print(source_code)
+        components.html(source_code, height=height)
+
 st.set_page_config(layout="wide")
 
 st.title('Аналіз медіа наративів навколо обстрілу Краматорського вокзалу')
@@ -23,22 +31,25 @@ st.markdown('## Які новинні наративи поширювались 
 options_general_narratives = ['Винуватець', 'Докази', 'Мета', "Фреймінг"]
 selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option}')
-
+section1_mapping:{'Винуватець':'section1_plots/culprit_plot_area_general.html',
+                  'Докази': 'section1_plots/evidence_plot_area_general.html',
+                  'Мета': 'section1_plots/goal_plot_area_general.html',
+                  'Фреймінг': 'section1_plots/framing_plot_area_general.html'}
+show_plot(options_general_narratives, selected_option)
 
 st.markdown('### Які новинні наративи поширювались протягом перших 24 годин?')
+selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
+st.write(f'Ви переглядаєте динаміку наратива: {selected_option}')
 
 st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
+selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
+st.write(f'Ви переглядаєте динаміку наратива: {selected_option}')
 
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
 st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
 st.markdown('### Найважливіші наративи щодо мети обстрілу')
-
-
-
-
-
 
 st.markdown('## Які ?')
 
@@ -56,10 +67,10 @@ st.markdown('## Методологія дослідження')
 
 
 # Display the HTML file in Streamlit
-HtmlFile = open('chart.html', 'r', encoding='utf-8')
-source_code = HtmlFile.read()
-print(source_code)
-components.html(source_code, height=800)
+# HtmlFile = open('chart.html', 'r', encoding='utf-8')
+# source_code = HtmlFile.read()
+# print(source_code)
+# components.html(source_code, height=800)
 
 
 
