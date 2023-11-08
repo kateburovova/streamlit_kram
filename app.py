@@ -77,15 +77,20 @@ show_plot(section1_mapping, selected_option1)
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
 options_general_levels = ['Деталізовано', 'Узагальнено']
-selected_option4 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_levels, key='levels4')
+selected_option4 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels4')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option4}')
-section3_mapping={
-    'Деталізовано': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
-    'Узагальнено': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html'}
+section4_mapping={
+    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
+    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html'}
+show_plot(section4_mapping, selected_option4)
 
-show_plot(section3_mapping, selected_option4)
-
-# Оберіть рівень узагальнення
+st.markdown('### Найважливіші наративи щодо мети обстрілу')
+selected_option5 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels5')
+st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option5}')
+section5_mapping={
+    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2.html',
+    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html'}
+show_plot(section5_mapping, selected_option4)
 
 # st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
