@@ -12,6 +12,9 @@ def load_data(path):
     data.drop(columns=['Unnamed: 0'], inplace=True)
     return data
 
+def pastel_styling(df):
+    return df.style.applymap(lambda x: "background-color: %s" % "paleturquoise")
+
 # data = load_data()
 
 def show_plot(dictionary=None, key=None, plotname=None, height=800):
@@ -50,20 +53,28 @@ selected_option2 = st.radio('Оберіть, будь ласка, тип нар�
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option2}')
 
 st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
-selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='source_of_narrative')
+# selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='source_of_narrative')
+# st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
+
+
+selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='general_narrative')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
+section3_mapping={
+    'Докази': 'first_narrative_tables/unique_evidence_level2.csv'}
+    # 'Винуватець': None,
+    # 'Мета': None,
+    # 'Фреймінг': None}
 
-# Sample data
+# df_unique_evidence_level2 = load_data('first_narrative_tables/unique_evidence_level2.csv')
 
-# Create a DataFrame
-df_unique_evidence_level2 = load_data('first_narrative_tables/unique_evidence_level2.csv')
+st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 
-# Function to apply pastel styling to the dataframe
-def pastel_styling(df):
-    return df.style.applymap(lambda x: "background-color: %s" % "paleturquoise")
+show_plot(section1_mapping, selected_option1)
 
-# Display the dataframe with pastel styling and only the first 10 rows
-st.dataframe(df_unique_evidence_level2, height=400)
+
+
+
+# st.dataframe(df_unique_evidence_level2, height=400)
 
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
