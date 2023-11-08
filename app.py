@@ -88,7 +88,9 @@ show_plot(section1_mapping, selected_option1)
 
 st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
 # selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='source_of_narrative')
-# st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
+st.write('https://t.me/ssigny, https://t.me/breege_time_20zz, https://t.me/medvedevvesti та https://t.me/ags_donbass є каналами, що запускали найбільше тиражованих повідомлень.',
+         'В таблицях нижче подано перші повідомлення з кожної відповідної групи з датами та каналами, що їх поширили.')
+
 
 options_general_narratives_reduced3 = ['Докази', 'Мета', "Фреймінг"]
 selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives_reduced3, key='unique_narrative_source')
