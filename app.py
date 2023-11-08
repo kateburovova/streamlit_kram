@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 import altair as alt
 import pandas as pd
 import numpy as np
-
+pd.set_option('display.max_colwidth', 50)
 @st.cache  # Add caching so we load the data only once
 def load_data(path):
     data = pd.read_csv(path)
@@ -63,7 +63,7 @@ def pastel_styling(df):
     return df.style.applymap(lambda x: "background-color: %s" % "paleturquoise")
 
 # Display the dataframe with pastel styling and only the first 10 rows
-st.dataframe(pastel_styling(df_unique_evidence_level2), height=400)
+st.dataframe(df_unique_evidence_level2, height=400)
 
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
