@@ -186,7 +186,7 @@ show_plot(combo_mapping8, combo)
 
 
 'Впливовість BC (number of times an individual acts as a bridge between other individuals), Впливовість EC and eigenvector centrality (importance of an individual based on the importance of those they are connected to)'
-st.markdown('## Методологія дослідження')
+# st.markdown('## Методологія дослідження')
 
 
 
