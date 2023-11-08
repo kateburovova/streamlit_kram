@@ -27,17 +27,19 @@ def show_plot(dictionary=None, key=None, plotname=None, height=800):
 
 st.set_page_config(layout="wide")
 
-st.markdown("""
-# Table of Contents
-1. [Section 1](#section-1)
-2. [Section 2](#section-2)
-3. [Section 3](#section-3)
-""")
+# st.markdown("""
+# # Table of Contents
+# 1. [Section 1](#section-1)
+# 2. [Section 2](#section-2)
+# 3. [Section 3](#section-3)
+# """)
 
 st.title('Аналіз медіа наративів навколо обстрілу Краматорського вокзалу')
 
 st.markdown('Задача: Провести аналіз поширення їх новин у ЗМІ з цього приводу після 10 год. 28 хв. 08 квітня 2022 року із встановленням першоджерела, подальшого поширення, яким чином подавалась інформація щодо того ким здійснено обстріл та щодо засобів, які використовувались, а також яким чином змінювалась інформація, яка подавалася.')
 
+
+########################Загальні деталі поширення
 st.markdown('## Які новинні наративи поширювались загалом?')
 options_general_narratives = ['Докази', 'Винуватець', 'Мета', "Фреймінг"]
 selected_option1 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='general_narrative')
@@ -48,14 +50,15 @@ section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_gener
                   'Фреймінг': 'section1_plots/framing_plot_area_general.html'}
 show_plot(section1_mapping, selected_option1)
 
-st.markdown('### Які новинні наративи поширювались протягом перших 24 годин?')
-selected_option2 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='first_24_hours_narrative')
-st.write(f'Ви переглядаєте динаміку наратива: {selected_option2}')
+############Перші 24 години
+
+# st.markdown('### Які новинні наративи поширювались протягом перших 24 годин?')
+# selected_option2 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='first_24_hours_narrative')
+# st.write(f'Ви переглядаєте динаміку наратива: {selected_option2}')
 
 st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
 # selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='source_of_narrative')
 # st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
-
 
 options_general_narratives_reduced3 = ['Докази', 'Мета', "Фреймінг"]
 selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives_reduced3, key='unique_narrative_source')
@@ -74,6 +77,9 @@ show_plot(section1_mapping, selected_option1)
 
 # st.dataframe(df_unique_evidence_level2, height=400)
 
+########################За типами наративів
+
+#############Докази
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
 options_general_levels = ['Деталізовано', 'Узагальнено']
@@ -84,6 +90,7 @@ section4_mapping={
     'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html'}
 show_plot(section4_mapping, selected_option4)
 
+#############Мета
 st.markdown('### Найважливіші наративи щодо мети обстрілу')
 selected_option5 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels5')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option5}')
@@ -91,20 +98,14 @@ section5_mapping={
     'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
     'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html'}
 show_plot(section5_mapping, selected_option4)
-
 # st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
-st.markdown('### Найважливіші наративи щодо мети обстрілу')
 
-# Оберіть рівень узагальнення
-
-
-st.markdown('## Які мотиви присутні в обговореннях події?')
-
-# Оберіть рівень узагальнення
-
+st.markdown('## Найважливіші мотиви присутні в обговореннях події?')
 
 st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
+
+st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення?')
 
 st.markdown('## Методологія дослідження')
 
