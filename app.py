@@ -88,7 +88,7 @@ st.markdown('### Найважливіші наративи щодо мети о�
 selected_option5 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels5')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option5}')
 section5_mapping={
-    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2.html',
+    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
     'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html'}
 show_plot(section5_mapping, selected_option4)
 
