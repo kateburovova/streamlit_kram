@@ -81,12 +81,13 @@ st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 #############Докази
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
-options_general_levels = ['Деталізовано', 'Узагальнено']
+options_general_levels = ['Найголовніші деталізовано', 'Найголовніші узагальнено', 'Всі']
 selected_option4 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels4')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option4}')
 section4_mapping={
-    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
-    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html'}
+    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
+    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html',
+    "Всі": 'histo_topN_narratives/all/all_evidence_distribution_by_date_top_percent.html'}
 show_plot(section4_mapping, selected_option4)
 
 #############Мета
@@ -94,8 +95,9 @@ st.markdown('### Найважливіші наративи щодо мети о�
 selected_option5 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels5')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option5}')
 section5_mapping={
-    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
-    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html'}
+    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
+    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html',
+    'Всі': 'histo_topN_narratives/all/all_goal_distribution_by_date_top_percent.html'}
 show_plot(section5_mapping, selected_option5)
 # st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
@@ -105,8 +107,9 @@ st.markdown('## Найважливіші мотиви присутні в обг
 selected_option6 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels6')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option6}')
 section6_mapping={
-    'Узагальнено': 'histo_topN_narratives/level2/plot_HISTO_framing25_level2.html',
-    'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_framing25_level1.html'}
+    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_framing25_level2.html',
+    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_framing25_level1.html',
+    'Всі': 'histo_topN_narratives/all/all_framing_distribution_by_date_top_percent.html'}
 show_plot(section6_mapping, selected_option6)
 
 # st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
@@ -114,7 +117,7 @@ show_plot(section6_mapping, selected_option6)
 st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення?')
 
 selected_option7 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_narratives_reduced3, key='levels7')
-st.write(f'Ви переглядаєте рівень деталізації наратива: {options_general_narratives_reduced3}')
+st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option7}')
 section7_mapping={
     'Докази': 'author_plots/evidence_author_distibution.html',
     'Мета': 'author_plots/goal_author_distibution.html',
