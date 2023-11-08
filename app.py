@@ -72,20 +72,32 @@ st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 
 show_plot(section1_mapping, selected_option1)
 
-
-
-
 # st.dataframe(df_unique_evidence_level2, height=400)
 
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
-st.markdown('### Найважливіші наративи щодо зброї і винуватця')
+options_general_levels = ['Деталізовано', 'Узагальнено']
+selected_option4 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_levels, key='levels4')
+st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option4}')
+section3_mapping={
+    'Деталізовано': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
+    'Узагальнено': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html'}
+
+show_plot(section3_mapping, selected_option4)
+
+# Оберіть рівень узагальнення
+
+# st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
 st.markdown('### Найважливіші наративи щодо мети обстрілу')
 
-st.markdown('## Які ?')
+# Оберіть рівень узагальнення
+
 
 st.markdown('## Які мотиви присутні в обговореннях події?')
+
+# Оберіть рівень узагальнення
+
 
 st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
 
