@@ -114,7 +114,7 @@ show_plot(section6_mapping, selected_option6)
 
 # st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
 
-st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення?')
+st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення')
 
 selected_option7 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_narratives_reduced3, key='levels7')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option7}')
@@ -124,6 +124,36 @@ section7_mapping={
     'Фреймінг': 'author_plots/framing_author_distibution.html'}
 show_plot(section7_mapping, selected_option7)
 
+
+st.markdown('## Розповсюдження трафаретних повідомлень')
+
+options_8 = ['Докази', 'Мета']
+selected_option8 = st.dropdown('Оберіть, будь ласка, тип наратива:', options_8, key='levels8')
+options_8_1 = ['Впливовість за переглядами', 'Впливовість за EC', 'Впливовість за BC']
+selected_option8_1 = st.dropdown('Оберіть, будь ласка, визначення впливовості:', options_8_1, key='levels81')
+options_8_2 = ['Узагальнено', 'Деталізовано']
+selected_option8_2 = st.dropdown('Оберіть, будь ласка, рівень узагальнення:', options_8_2, key='levels82')
+st.write(f'Ви переглядаєте наратив: {selected_option8}, {selected_option8_1},')
+
+combo = f'{selected_option8} + {selected_option8_1} + {selected_option8_2}'
+
+combo_mapping8 = {'Докази + Впливовість за переглядами + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
+                  'Докази + Впливовість за EC + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
+                  'Докази + Впливовість за BC + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_BC.html',
+                  'Мета + Впливовість за переглядами + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_VIEWS.html',
+                  'Мета + Впливовість за EC + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
+                  'Мета + Впливовість за BC + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
+                  'Докази + Впливовість за переглядами + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
+                  'Докази + Впливовість за EC + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_EC.html',
+                  'Докази + Впливовість за BC + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_BC.html',
+                  'Мета + Впливовість за переглядами + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
+                  'Мета + Впливовість за EC + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_EС.html',
+                  'Мета + Впливовість за BC + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_ВС.html'}
+
+show_plot(combo_mapping8, combo)
+
+
+'Впливовість BC (number of times an individual acts as a bridge between other individuals), Впливовість EC and eigenvector centrality (importance of an individual based on the importance of those they are connected to)'
 st.markdown('## Методологія дослідження')
 
 
