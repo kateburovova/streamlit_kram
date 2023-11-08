@@ -15,24 +15,9 @@ import pandas as pd
 st.set_page_config(layout="wide")
 
 st.title('Аналіз медіа наративів навколо обстрілу Краматорського вокзалу')
+st.markdown('## Задача:')
+st.markdown('Провести аналіз поширення їх новин у ЗМІ з цього приводу після 10 год. 28 хв. 08 квітня 2022 року із встановленням першоджерела, подальшого поширення, яким чином подавалась інформація щодо того ким здійснено обстріл та щодо засобів, які використовувались, а також яким чином змінювалась інформація, яка подавалася.')
 
-st.markdown(
-    """
-    <style>
-    .color-block {
-        color: white; 
-        background-color: #0080ff; 
-        padding: 4px; 
-        border-radius: 5px;
-    }
-    </style>
-    <div class="color-block">
-        В російському сегменті Телеграм
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-# st.markdown('В російському сегменті Телеграм')
 
 
 # Display the HTML file in Streamlit
