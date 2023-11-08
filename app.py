@@ -128,11 +128,11 @@ show_plot(section7_mapping, selected_option7)
 st.markdown('## Розповсюдження трафаретних повідомлень')
 
 options_8 = ['Докази', 'Мета']
-selected_option8 = st.dropdown('Оберіть, будь ласка, тип наратива:', options_8, key='levels8')
+selected_option8 = st.selectbox('Оберіть, будь ласка, тип наратива:', options_8, key='levels8')
 options_8_1 = ['Впливовість за переглядами', 'Впливовість за EC', 'Впливовість за BC']
-selected_option8_1 = st.dropdown('Оберіть, будь ласка, визначення впливовості:', options_8_1, key='levels81')
+selected_option8_1 = st.selectbox('Оберіть, будь ласка, визначення впливовості:', options_8_1, key='levels81')
 options_8_2 = ['Узагальнено', 'Деталізовано']
-selected_option8_2 = st.dropdown('Оберіть, будь ласка, рівень узагальнення:', options_8_2, key='levels82')
+selected_option8_2 = st.selectbox('Оберіть, будь ласка, рівень узагальнення:', options_8_2, key='levels82')
 st.write(f'Ви переглядаєте наратив: {selected_option8}, {selected_option8_1},')
 
 combo = f'{selected_option8} + {selected_option8_1} + {selected_option8_2}'
