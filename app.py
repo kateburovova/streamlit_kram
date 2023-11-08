@@ -28,9 +28,8 @@ st.title('Аналіз медіа наративів навколо обстрі
 st.markdown('Задача: Провести аналіз поширення їх новин у ЗМІ з цього приводу після 10 год. 28 хв. 08 квітня 2022 року із встановленням першоджерела, подальшого поширення, яким чином подавалась інформація щодо того ким здійснено обстріл та щодо засобів, які використовувались, а також яким чином змінювалась інформація, яка подавалася.')
 
 st.markdown('## Які новинні наративи поширювались загалом?')
-
 options_general_narratives = ['Докази', 'Винуватець', 'Мета', "Фреймінг"]
-selected_option1 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
+selected_option1 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='general_narrative')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option1}')
 section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_general.html',
                   'Докази': 'section1_plots/evidence_plot_area_general.html',
@@ -39,12 +38,12 @@ section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_gener
 show_plot(section1_mapping, selected_option1)
 
 st.markdown('### Які новинні наративи поширювались протягом перших 24 годин?')
-selected_option2 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
+selected_option2 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='first_24_hours_narrative')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option2}')
 
 st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
-selected_option = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives)
-st.write(f'Ви переглядаєте динаміку наратива: {selected_option}')
+selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='source_of_narrative')
+st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
 
 # Sample data
 data = {
