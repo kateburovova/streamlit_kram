@@ -109,9 +109,17 @@ section6_mapping={
     'Деталізовано': 'histo_topN_narratives/level1/plot_HISTO_framing25_level1.html'}
 show_plot(section6_mapping, selected_option6)
 
-st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
+# st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
 
 st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення?')
+
+selected_option7 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_narratives_reduced3, key='levels7')
+st.write(f'Ви переглядаєте рівень деталізації наратива: {options_general_narratives_reduced3}')
+section7_mapping={
+    'Докази': 'author_plots/evidence_author_distibution.html',
+    'Мета': 'author_plots/goal_author_distibution.html',
+    'Фреймінг': 'author_plots/framing_author_distibution.html'}
+show_plot(section7_mapping, selected_option7)
 
 st.markdown('## Методологія дослідження')
 
