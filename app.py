@@ -60,7 +60,7 @@ st.markdown('### Хто був першоджерелом повідомлень
 selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='unique_narrative_source')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
 section3_mapping={
-    'Докази': 'first_narrative_tables/unique_evidence_level2.csv'}
+    'Докази': 'first_narrative_tables/unique_evidence_level2 (1).csv'}
     # 'Винуватець': None,
     # 'Мета': None,
     # 'Фреймінг': None}
