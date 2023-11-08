@@ -44,7 +44,10 @@ message1 = 'Кожен з поданих графіків - інтерактив
 
 st.markdown(f"""
     <div style='background-color: {color}; padding: 10px; border-radius: 5px;'>
-        <p style='color: black; text-align: left;'>{message1} <br> {message2}</p>
+        <p style='color: black; text-align: left;'>
+            {message1}<br>
+            {message2}
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
