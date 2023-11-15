@@ -75,10 +75,10 @@ st.write('Основними мотивами обговорення обстр�
 options_general_narratives = ['Докази', 'Винуватець', 'Мета', "Фреймінг"]
 selected_option1 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives, key='general_narrative')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option1}')
-section1_mapping={'Винуватець':'section1_plots/culprit_plot_area_general.html',
-                  'Докази': 'section1_plots/evidence_plot_area_general.html',
-                  'Мета': 'section1_plots/goal_plot_area_general.html',
-                  'Фреймінг': 'section1_plots/framing_plot_area_general.html'}
+section1_mapping={'Винуватець':'data_v2/section1_plots/culprit_plot_area_general.html',
+                  'Докази': 'data_v2/section1_plots/evidence_plot_area_general.html',
+                  'Мета': 'data_v2/section1_plots/goal_plot_area_general.html',
+                  'Фреймінг': 'data_v2/section1_plots/framing_plot_area_general.html'}
 show_plot(section1_mapping, selected_option1)
 
 
@@ -100,12 +100,12 @@ options_general_narratives_reduced3 = ['Докази', 'Мета', "Фреймі
 selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives_reduced3, key='unique_narrative_source')
 st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
 section3_mapping={
-    'Докази': 'first_narrative_tables/unique_evidence_level2 (1).csv',
+    'Докази': 'data_v2/first_narrative_tables/unique_evidence_level2 (1).csv',
     # 'Винуватець': None,
-    'Мета': 'first_narrative_tables/df_unique_goals.csv',
-    'Фреймінг': 'first_narrative_tables/df_unique_framing.csv'}
+    'Мета': 'data_v2/first_narrative_tables/df_unique_goals.csv',
+    'Фреймінг': 'data_v2/first_narrative_tables/df_unique_framing.csv'}
 
-# df_unique_evidence_level2 = load_data('first_narrative_tables/unique_evidence_level2.csv')
+# df_unique_evidence_level2 = load_data('first_narrative_tables/unique_evidence_level2 (1).csv')
 
 st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 
@@ -121,9 +121,9 @@ options_general_levels = ['Найголовніші деталізовано', '
 selected_option4 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels4')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option4}')
 section4_mapping={
-    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
-    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html',
-    "Всі": 'histo_topN_narratives/all/all_evidence_distribution_by_date_top_percent.html'}
+    'Найголовніші узагальнено': 'data_v2/histo_topN_narratives/level2/plot_HISTO_evidence50_level2.html',
+    'Найголовніші деталізовано': 'data_v2/histo_topN_narratives/level1/plot_HISTO_evidence25_level1.html',
+    "Всі": 'data_v2/histo_topN_narratives/all/all_evidence_distribution_by_date_top_percent.html'}
 show_plot(section4_mapping, selected_option4)
 
 #############Мета
@@ -131,9 +131,9 @@ st.markdown('### Найважливіші наративи щодо мети о�
 selected_option5 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels5')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option5}')
 section5_mapping={
-    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
-    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_goal25_level1.html',
-    'Всі': 'histo_topN_narratives/all/all_goal_distribution_by_date_top_percent.html'}
+    'Найголовніші узагальнено': 'data_v2/histo_topN_narratives/level2/plot_HISTO_goal50_level2-2.html',
+    'Найголовніші деталізовано': 'data_v2/histo_topN_narratives/level1/plot_HISTO_goal25_level1.html',
+    'Всі': 'data_v2/histo_topN_narratives/all/all_goal_distribution_by_date_top_percent.html'}
 show_plot(section5_mapping, selected_option5)
 # st.markdown('### Найважливіші наративи щодо зброї і винуватця')
 
@@ -143,9 +143,9 @@ st.markdown('## Найважливіші мотиви присутні в обг
 selected_option6 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_levels, key='levels6')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option6}')
 section6_mapping={
-    'Найголовніші узагальнено': 'histo_topN_narratives/level2/plot_HISTO_framing25_level2.html',
-    'Найголовніші деталізовано': 'histo_topN_narratives/level1/plot_HISTO_framing25_level1.html',
-    'Всі': 'histo_topN_narratives/all/all_framing_distribution_by_date_top_percent.html'}
+    'Найголовніші узагальнено': 'data_v2/histo_topN_narratives/level2/plot_HISTO_framing25_level2.html',
+    'Найголовніші деталізовано': 'data_v2/histo_topN_narratives/level1/plot_HISTO_framing25_level1.html',
+    'Всі': 'data_v2/histo_topN_narratives/all/all_framing_distribution_by_date_top_percent.html'}
 show_plot(section6_mapping, selected_option6)
 
 # st.markdown('## Хто був важливими джерелами свідчень і думок при обговоренні події?')
@@ -155,9 +155,9 @@ st.markdown('## Хто найбільше розповсюджував траф�
 selected_option7 = st.radio('Оберіть, будь ласка, рівень деталізації:', options_general_narratives_reduced3, key='levels7')
 st.write(f'Ви переглядаєте рівень деталізації наратива: {selected_option7}')
 section7_mapping={
-    'Докази': 'author_plots/evidence_author_distibution.html',
-    'Мета': 'author_plots/goal_author_distibution.html',
-    'Фреймінг': 'author_plots/framing_author_distibution.html'}
+    'Докази': 'data_v2/author_plots/evidence_author_distibution.html',
+    'Мета': 'data_v2/author_plots/goal_author_distibution.html',
+    'Фреймінг': 'data_v2/author_plots/framing_author_distibution.html'}
 show_plot(section7_mapping, selected_option7)
 
 
@@ -181,18 +181,18 @@ st.write(f'Ви переглядаєте наратив: {selected_option8}, {se
 
 combo = f'{selected_option8} + {selected_option8_1} + {selected_option8_2}'
 
-combo_mapping8 = {'Докази + Впливовість за переглядами + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
-                  'Докази + Впливовість за EC + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
-                  'Докази + Впливовість за BC + Узагальнено': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_BC.html',
-                  'Мета + Впливовість за переглядами + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_VIEWS.html',
-                  'Мета + Впливовість за EC + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
-                  'Мета + Впливовість за BC + Узагальнено': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
-                  'Докази + Впливовість за переглядами + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
-                  'Докази + Впливовість за EC + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_EC.html',
-                  'Докази + Впливовість за BC + Деталізовано': 'trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_BC.html',
-                  'Мета + Впливовість за переглядами + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
-                  'Мета + Впливовість за EC + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_EС.html',
-                  'Мета + Впливовість за BC + Деталізовано': 'trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_ВС.html'}
+combo_mapping8 = {'Докази + Впливовість за переглядами + Узагальнено': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
+                  'Докази + Впливовість за EC + Узагальнено': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_EC.html',
+                  'Докази + Впливовість за BC + Узагальнено': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level2_BC.html',
+                  'Мета + Впливовість за переглядами + Узагальнено': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_VIEWS.html',
+                  'Мета + Впливовість за EC + Узагальнено': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
+                  'Мета + Впливовість за BC + Узагальнено': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level2_EС.html',
+                  'Докази + Впливовість за переглядами + Деталізовано': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
+                  'Докази + Впливовість за EC + Деталізовано': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_EC.html',
+                  'Докази + Впливовість за BC + Деталізовано': 'data_v2/trafaret/SHevidence_swarmplot_by_timesteps_SHAPES_level1_BC.html',
+                  'Мета + Впливовість за переглядами + Деталізовано': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_VIEWS.html',
+                  'Мета + Впливовість за EC + Деталізовано': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_EС.html',
+                  'Мета + Впливовість за BC + Деталізовано': 'data_v2/trafaret/SHgoal_swarmplot_by_timesteps_SHAPES_level1_ВС.html'}
 
 show_plot(combo_mapping8, combo)
 
