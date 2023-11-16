@@ -52,24 +52,6 @@ section1_mapping={'Винуватець':'data_v2/section1_plots/culprit_plot_ar
                   'Фреймінг': 'data_v2/section1_plots/framing_plot_area_general.html'}
 show_plot(section1_mapping, selected_option1)
 
-
-st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
-st.write('https://t.me/ssigny, https://t.me/breege_time_20zz, https://t.me/medvedevvesti та https://t.me/ags_donbass є каналами, що запускали найбільше тиражованих повідомлень.',
-         'В таблицях нижче подано перші повідомлення з кожної відповідної групи з датами та каналами, що їх поширили.',
-         'Клікніть на повідомлення для того, щоб прочитати його повністю.')
-
-
-options_general_narratives_reduced3 = ['Докази', 'Мета', "Фреймінг"]
-selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives_reduced3, key='unique_narrative_source')
-st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
-section3_mapping={
-    'Докази': 'data_v2/first_narrative_tables/unique_evidence_level2 (1).csv',
-    # 'Винуватець': None,
-    'Мета': 'data_v2/first_narrative_tables/df_unique_goals.csv',
-    'Фреймінг': 'data_v2/first_narrative_tables/df_unique_framing.csv'}
-
-st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
-
 #############Докази
 st.markdown('### Найважливіші наративи доказів щодо обстрілу')
 
@@ -134,6 +116,24 @@ section6_mapping={
     'Найголовніші деталізовано': 'data_v2/histo_topN_narratives/level1/plot_HISTO_framing25_level1.html',
     'Всі': 'data_v2/histo_topN_narratives/all/all_framing_distribution_by_date_top_percent.html'}
 show_plot(section6_mapping, selected_option6)
+
+
+st.markdown('### Хто був першоджерелом повідомлень для кожного типу наративу в межах нашого набору Телеграм каналів?')
+st.write('https://t.me/ssigny, https://t.me/breege_time_20zz, https://t.me/medvedevvesti та https://t.me/ags_donbass є каналами, що запускали найбільше тиражованих повідомлень.',
+         'В таблицях нижче подано перші повідомлення з кожної відповідної групи з датами та каналами, що їх поширили.',
+         'Клікніть на повідомлення для того, щоб прочитати його повністю.')
+
+
+options_general_narratives_reduced3 = ['Докази', 'Мета', "Фреймінг"]
+selected_option3 = st.radio('Оберіть, будь ласка, тип наратива:', options_general_narratives_reduced3, key='unique_narrative_source')
+st.write(f'Ви переглядаєте динаміку наратива: {selected_option3}')
+section3_mapping={
+    'Докази': 'data_v2/first_narrative_tables/unique_evidence_level2 (1).csv',
+    # 'Винуватець': None,
+    'Мета': 'data_v2/first_narrative_tables/df_unique_goals.csv',
+    'Фреймінг': 'data_v2/first_narrative_tables/df_unique_framing.csv'}
+
+st.dataframe(load_data(section3_mapping[selected_option3]), height=400)
 
 st.markdown('## Хто найбільше розповсюджував трафаретні повідомлення')
 
