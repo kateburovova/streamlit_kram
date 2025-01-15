@@ -5,8 +5,11 @@ import streamlit.components.v1 as components
 import altair as alt
 import pandas as pd
 import numpy as np
+
+st.set_page_config(layout="wide")
+
 pd.set_option('display.max_colwidth', 50)
-@st.cache  # Add caching so we load the data only once
+@st.cache_data  # Add caching so we load the data only once
 def load_data(path):
     data = pd.read_csv(path)
     data.drop(columns=['Unnamed: 0'], inplace=True)
